@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.limpafacil.controller.ProdutoController">
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding>
+                <Insets top="22" right="16" bottom="22" left="16"/>
+            </padding>
+            <Label text="LimpaFácil" styleClass="sidebar-title"/>
+            <Button text="Dashboard" onAction="#voltarDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Registrar Venda" onAction="#abrirVenda" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Categorias" onAction="#abrirCategorias" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Produtos" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Sair" onAction="#sair" maxWidth="Infinity" styleClass="nav-button"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="14" styleClass="page">
+            <padding>
+                <Insets top="24" right="28" bottom="24" left="28"/>
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Produtos" styleClass="page-title"/>
+                <Label fx:id="alertasLabel" styleClass="stock-alert"/>
+            </HBox>
+
+            <GridPane hgap="12" vgap="10">
+                <Label text="Código" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="codigoField" promptText="PROD001" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+                <Label text="Nome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <TextField fx:id="nomeField" promptText="Nome do produto" prefWidth="240" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Marca" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="marcaField" promptText="Marca" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+                <Label text="Categoria" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="categoriaComboBox" prefWidth="190" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+
+                <Label text="Preço de venda" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <TextField fx:id="precoField" promptText="0.00" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Estoque" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                <TextField fx:id="quantidadeField" promptText="0" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+
+                <Label text="Nível mínimo" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+                <TextField fx:id="nivelMinimoField" promptText="0" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+            </GridPane>
+
+            <CheckBox fx:id="ativoCheckBox" text="Produto ativo"/>
+
+            <HBox spacing="10">
+                <Button text="Salvar" onAction="#salvar" styleClass="primary-button"/>
+                <Button text="Limpar" onAction="#limpar"/>
+                <Button text="Inativar" onAction="#excluir" styleClass="danger-button"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <TextField fx:id="buscaField" promptText="Buscar por código ou nome" prefWidth="340" onAction="#buscar"/>
+                <Button text="Buscar" onAction="#buscar"/>
+            </HBox>
+
+            <Label fx:id="mensagemLabel" styleClass="message-label"/>
+
+            <TableView fx:id="produtosTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="codigoColumn" text="Código" prefWidth="95"/>
+                    <TableColumn fx:id="nomeColumn" text="Nome" prefWidth="190"/>
+                    <TableColumn fx:id="marcaColumn" text="Marca" prefWidth="130"/>
+                    <TableColumn fx:id="categoriaColumn" text="Categoria" prefWidth="150"/>
+                    <TableColumn fx:id="precoColumn" text="Preço" prefWidth="90"/>
+                    <TableColumn fx:id="quantidadeColumn" text="Estoque" prefWidth="85"/>
+                    <TableColumn fx:id="minimoColumn" text="Mínimo" prefWidth="85"/>
+                    <TableColumn fx:id="ativoColumn" text="Ativo" prefWidth="80"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

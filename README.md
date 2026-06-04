@@ -9,6 +9,7 @@ Aplicação desktop JavaFX para gerenciamento inicial de uma loja de produtos de
 - CRUD de categorias.
 - Cadastro, edição, busca e inativação de produtos.
 - Integração com PostgreSQL via JDBC.
+- Registro de venda com baixa automática de estoque e comprovante.
 
 ## Requisitos
 

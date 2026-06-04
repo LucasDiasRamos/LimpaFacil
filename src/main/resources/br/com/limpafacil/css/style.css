@@ -1,0 +1,125 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #f6f7f9;
+    -fx-text-fill: #1f2933;
+}
+
+.login-root {
+    -fx-background-color: #f6f7f9;
+}
+
+.app-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 700;
+}
+
+.sidebar {
+    -fx-background-color: #1f2933;
+    -fx-pref-width: 190px;
+}
+
+.sidebar-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 0 0 14 0;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #e5e7eb;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 12;
+}
+
+.nav-button:hover {
+    -fx-background-color: #334155;
+}
+
+.page {
+    -fx-background-color: #f6f7f9;
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 700;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+}
+
+.metric-card {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 18;
+    -fx-min-width: 230px;
+}
+
+.metric-number {
+    -fx-font-size: 34px;
+    -fx-font-weight: 700;
+}
+
+.total-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+}
+
+.warning,
+.stock-alert {
+    -fx-text-fill: #b45309;
+}
+
+.stock-alert {
+    -fx-font-weight: 700;
+}
+
+.muted {
+    -fx-text-fill: #64748b;
+}
+
+.strong {
+    -fx-font-weight: 700;
+}
+
+.primary-button {
+    -fx-background-color: #0f766e;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 700;
+    -fx-padding: 8 18;
+}
+
+.primary-button:hover {
+    -fx-background-color: #115e59;
+}
+
+.danger-button {
+    -fx-background-color: #b91c1c;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 700;
+}
+
+.danger-button:hover {
+    -fx-background-color: #991b1b;
+}
+
+.error-label {
+    -fx-text-fill: #b91c1c;
+}
+
+.message-label {
+    -fx-text-fill: #0f766e;
+    -fx-font-weight: 700;
+}
+
+.table-row-cell.estoque-minimo {
+    -fx-background-color: #fff7ed;
+}
+
+.table-row-cell.estoque-minimo:selected {
+    -fx-background-color: #fed7aa;
+}
