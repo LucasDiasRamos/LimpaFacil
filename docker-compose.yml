@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: limpafacil-db
+    environment:
+      POSTGRES_DB: limpafacil
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - limpafacil-postgres-data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d limpafacil"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+    container_name: limpafacil-app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      LIMPAFACIL_DB_URL: jdbc:postgresql://db:5432/limpafacil
+      LIMPAFACIL_DB_USER: postgres
+      LIMPAFACIL_DB_PASSWORD: postgres
+      DISPLAY: ${DISPLAY}
+    volumes:
+      - .:/app
+      - limpafacil-maven-cache:/root/.m2
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+
+volumes:
+  limpafacil-postgres-data:
+  limpafacil-maven-cache:
