@@ -25,6 +25,25 @@ CREATE TABLE IF NOT EXISTS produtos (
     ativo BOOLEAN DEFAULT TRUE
 );
 
+CREATE TABLE IF NOT EXISTS vendas (
+    id SERIAL PRIMARY KEY,
+    codigo_venda VARCHAR(30) UNIQUE NOT NULL,
+    data_hora TIMESTAMP NOT NULL,
+    funcionario_id INTEGER NOT NULL REFERENCES usuarios(id),
+    valor_total NUMERIC(10,2) NOT NULL,
+    forma_pagamento VARCHAR(30) NOT NULL,
+    status VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS itens_venda (
+    id SERIAL PRIMARY KEY,
+    venda_id INTEGER NOT NULL REFERENCES vendas(id),
+    produto_id INTEGER NOT NULL REFERENCES produtos(id),
+    quantidade INTEGER NOT NULL,
+    preco_unitario NUMERIC(10,2) NOT NULL,
+    subtotal NUMERIC(10,2) NOT NULL
+);
+
 INSERT INTO usuarios (nome, email, senha, perfil, ativo)
 VALUES
 ('Administrador', 'admin@limpafacil.com', '123456', 'ADMINISTRADOR', true),
