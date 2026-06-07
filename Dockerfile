@@ -19,7 +19,8 @@ COPY pom.xml .
 RUN mvn -q -DskipTests dependency:go-offline
 
 COPY . .
-RUN chmod +x docker/app/entrypoint.sh
+RUN sed -i 's/\r$//' docker/app/entrypoint.sh \
+    && chmod +x docker/app/entrypoint.sh
 
 ENTRYPOINT ["docker/app/entrypoint.sh"]
 CMD ["mvn", "javafx:run"]
