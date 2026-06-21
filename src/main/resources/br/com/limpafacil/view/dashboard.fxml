@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.com.limpafacil.controller.DashboardController">
+            fx:controller="br.com.limpafacil.view.DashboardViewController">
     <left>
         <VBox spacing="10" styleClass="sidebar">
             <padding>
@@ -18,6 +18,12 @@
             <Label text="LimpaFácil" styleClass="sidebar-title"/>
             <Button text="Dashboard" maxWidth="Infinity" styleClass="nav-button"/>
             <Button text="Registrar Venda" onAction="#abrirVenda" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Orçamentos" onAction="#abrirOrcamentos" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Devoluções" onAction="#abrirDevolucoes" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Clientes" onAction="#abrirClientes" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Fornecedores" onAction="#abrirFornecedores" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Funcionários" onAction="#abrirFuncionarios" maxWidth="Infinity" styleClass="nav-button"/>
+            <Button text="Relatórios" onAction="#abrirRelatorios" maxWidth="Infinity" styleClass="nav-button"/>
             <Button text="Categorias" onAction="#abrirCategorias" maxWidth="Infinity" styleClass="nav-button"/>
             <Button text="Produtos" onAction="#abrirProdutos" maxWidth="Infinity" styleClass="nav-button"/>
             <Button text="Sair" onAction="#sair" maxWidth="Infinity" styleClass="nav-button"/>

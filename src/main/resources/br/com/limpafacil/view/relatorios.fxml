@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.limpafacil.view.RelatorioViewController">
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding><Insets top="22" right="16" bottom="22" left="16"/></padding>
+            <Label text="LimpaFácil" styleClass="sidebar-title"/>
+            <Button text="Dashboard" onAction="#voltarDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="14" styleClass="page">
+            <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+            <Label text="Relatórios gerenciais" styleClass="page-title"/>
+            <HBox spacing="10">
+                <DatePicker fx:id="dataInicialPicker"/>
+                <DatePicker fx:id="dataFinalPicker"/>
+                <TextField fx:id="clienteField" promptText="Cliente para histórico" prefWidth="220"/>
+            </HBox>
+            <HBox spacing="10">
+                <Button text="Vendas por período" onAction="#vendasPeriodo" styleClass="primary-button"/>
+                <Button text="Produtos mais vendidos" onAction="#produtosMaisVendidos"/>
+                <Button text="Estoque" onAction="#estoque"/>
+                <Button text="Histórico por cliente" onAction="#historicoCliente"/>
+                <Button text="Fluxo de caixa" onAction="#fluxoCaixa"/>
+            </HBox>
+            <TextArea fx:id="resultadoArea" editable="false" wrapText="false" VBox.vgrow="ALWAYS"/>
+            <Label fx:id="mensagemLabel" styleClass="message-label"/>
+        </VBox>
+    </center>
+</BorderPane>

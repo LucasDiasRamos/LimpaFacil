@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.com.limpafacil.controller.VendaController">
+            fx:controller="br.com.limpafacil.view.VendaViewController">
     <left>
         <VBox spacing="10" styleClass="sidebar">
             <padding>
@@ -67,14 +67,17 @@
                 <Label text="Forma de pagamento" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
                 <ComboBox fx:id="formaPagamentoComboBox" prefWidth="220" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
 
-                <Label text="Valor recebido" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-                <TextField fx:id="valorRecebidoField" promptText="Obrigatório para dinheiro" prefWidth="180" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Cliente" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <ComboBox fx:id="clienteComboBox" promptText="Opcional" prefWidth="220" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-                <Label text="Total" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
-                <Label fx:id="totalLabel" text="R$ 0,00" styleClass="total-label" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <Label text="Valor recebido" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="valorRecebidoField" promptText="Obrigatório para dinheiro" prefWidth="180" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
 
-                <Label text="Troco" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
-                <Label fx:id="trocoLabel" text="R$ 0,00" styleClass="total-label" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                <Label text="Total" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+                <Label fx:id="totalLabel" text="R$ 0,00" styleClass="total-label" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                <Label text="Troco" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+                <Label fx:id="trocoLabel" text="R$ 0,00" styleClass="total-label" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
             </GridPane>
 
             <HBox spacing="10">
