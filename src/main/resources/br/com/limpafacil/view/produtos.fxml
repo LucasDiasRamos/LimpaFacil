@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.com.limpafacil.controller.ProdutoController">
+            fx:controller="br.com.limpafacil.view.ProdutoViewController">
     <left>
         <VBox spacing="10" styleClass="sidebar">
             <padding>

@@ -9,7 +9,7 @@
 
 <VBox alignment="CENTER" spacing="16" styleClass="login-root"
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="br.com.limpafacil.controller.LoginController">
+      fx:controller="br.com.limpafacil.view.LoginViewController">
     <padding>
         <Insets top="36" right="40" bottom="36" left="40"/>
     </padding>

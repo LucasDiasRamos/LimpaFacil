@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.limpafacil.view.DevolucaoViewController">
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <padding><Insets top="22" right="16" bottom="22" left="16"/></padding>
+            <Label text="LimpaFácil" styleClass="sidebar-title"/>
+            <Button text="Dashboard" onAction="#voltarDashboard" maxWidth="Infinity" styleClass="nav-button"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="14" styleClass="page">
+            <padding><Insets top="24" right="28" bottom="24" left="28"/></padding>
+            <Label text="Devoluções" styleClass="page-title"/>
+            <HBox spacing="10">
+                <TextField fx:id="codigoVendaField" promptText="Código da venda" prefWidth="220" onAction="#buscarVenda"/>
+                <Button text="Buscar venda" onAction="#buscarVenda"/>
+                <ComboBox fx:id="clienteComboBox" promptText="Cliente opcional" prefWidth="240"/>
+            </HBox>
+            <Label fx:id="vendaLabel" styleClass="section-title"/>
+            <TableView fx:id="itensTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="produtoColumn" text="Produto" prefWidth="360"/>
+                    <TableColumn fx:id="quantidadeColumn" text="Qtd vendida" prefWidth="120"/>
+                    <TableColumn fx:id="valorColumn" text="Valor unitário" prefWidth="140"/>
+                </columns>
+            </TableView>
+            <HBox spacing="10">
+                <TextField fx:id="quantidadeField" promptText="Quantidade devolvida" prefWidth="170"/>
+                <TextArea fx:id="motivoArea" promptText="Motivo da devolução" prefWidth="420" prefHeight="70"/>
+                <Button text="Registrar devolução" onAction="#registrarDevolucao" styleClass="primary-button"/>
+            </HBox>
+            <Label fx:id="mensagemLabel" styleClass="message-label"/>
+        </VBox>
+    </center>
+</BorderPane>
